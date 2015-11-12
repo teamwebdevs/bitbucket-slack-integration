@@ -58,7 +58,7 @@ if(isset($data['changes'])) {
 
     $payload = '{
         "username": "'.$data['repository']['name'].' Issue",
-        "icon_url": "https://conceptbakery.de/__dev/bitbucketIcon.jpg",
+        "icon_url": "URL TO BITBUCKET ICON",
         "attachments": [{
             "fallback": "New comment <'.$link.'|#' . $data['issue']['id'] .'> for the repo:  *' . $data['repository']['name'] .'*",
             "color": "warning",
@@ -71,8 +71,8 @@ if(isset($data['changes'])) {
                     "short": "true"
                 },
                 {
-                    "title": "priority",
-                    "value": "'. $data['issue']['priority'].'",
+                    "title": "comment",
+                    "value": "'. substr($data['comment']['content']['raw'], 0, 200) .'",
                     "short": "true"
                 }
             ]
